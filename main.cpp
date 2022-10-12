@@ -5,14 +5,15 @@
 using namespace std;
 
 /* user defined function identifier */
-void seconds(int, int &, int &, int &);
+/* ' & ' represents somthing being used in two different places */
+void time(int&, int&, int&, int);
 
 int main() {
 
-  int secs;
+  int secs = 0;
   int mins;
   int hours;
-  int second;
+  int seconds;
 
   /* cout << " Enter number of seconds: ";
    cin >> secs;
@@ -20,32 +21,34 @@ int main() {
    cin >> mins;
    cout << " Enter number of hours: ";
    cin >> hours; */
-  double sec;
-  cout << "enter number of seconds: ";
-  cin >> sec;
+  cout << "enter number of seconds wating to be converted: ";
+  cin >> secs;
 
-  seconds(hours, mins, secs, second);
+   time(hours, mins, seconds, secs); 
+/*
+  cout << "Hours: " << hours << endl;
 
-  cout << hours << endl;
-  cout << secs << endl;
-  cout << mins << endl;
-  cout << second << endl;
+  cout << "Minutes: " << mins << endl;
+  cout << "Seconds: " << seconds << endl;} */
 
   return 0;
 }
 
 /* user defined function */
-void seconds(int hours, int mins, int secs, int second) {
+void time(int &hours, int &mins, int &seconds, int secs) {
 
-  int time;
+  int total;
 
-  time = (seconds % 3600);
+  total = (secs % 3600); 
+  cout << total << endl; 
 
-  hours = seconds / 60;
+  hours = secs / 3600;
+  cout << " Hours: " << hours << endl;
 
-  mins = time / 60;
+  mins = total / 60;
+  cout << " Minutes: " << mins << endl;
 
-  secs = time % 60;
-
-  time = sec;
-};
+  secs = total % 60;
+  cout << " Seconds: " << secs <<  endl;
+ 
+  }
