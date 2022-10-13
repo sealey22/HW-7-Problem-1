@@ -6,7 +6,7 @@ using namespace std;
 
 /* user defined function identifier */
 /* ' & ' represents somthing being used in two different places */
-void time(int&, int&, int&, int);
+void time(int &, int &, int &, int);
 
 int main() {
 
@@ -24,12 +24,12 @@ int main() {
   cout << "enter number of seconds wating to be converted: ";
   cin >> secs;
 
-   time(hours, mins, seconds, secs); 
-/*
-  cout << "Hours: " << hours << endl;
+  time(hours, mins, seconds, secs);
+  /*
+    cout << "Hours: " << hours << endl;
 
-  cout << "Minutes: " << mins << endl;
-  cout << "Seconds: " << seconds << endl;} */
+    cout << "Minutes: " << mins << endl;
+    cout << "Seconds: " << seconds << endl;} */
 
   return 0;
 }
@@ -39,8 +39,8 @@ void time(int &hours, int &mins, int &seconds, int secs) {
 
   int total;
 
-  total = (secs % 3600); 
-  cout << total << endl; 
+  total = (secs % 3600);
+  cout << total << endl;
 
   hours = secs / 3600;
   cout << " Hours: " << hours << endl;
@@ -49,6 +49,5 @@ void time(int &hours, int &mins, int &seconds, int secs) {
   cout << " Minutes: " << mins << endl;
 
   secs = total % 60;
-  cout << " Seconds: " << secs <<  endl;
- 
-  }
+  cout << " Seconds: " << secs << endl;
+}
